@@ -59,18 +59,16 @@ class UserHubScreen extends StatelessWidget {
                       Icons.search,
                       color: Colors.grey.shade500,
                     ),
-                    Container(
-                      child: const Text("Search"),
-                    ),
+                    const Text("Search"),
                   ],
                 ),
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
-          Expanded(child: ShopGrid()),
+          const Expanded(child:  ShopGrid()),
         ],
       ),
     );

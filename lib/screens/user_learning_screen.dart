@@ -1,3 +1,4 @@
+import 'package:assessmentsecond/list.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -7,56 +8,7 @@ import '../utils/program_events_heading.dart';
 class UserLearningScreen extends StatelessWidget {
   UserLearningScreen({Key? key}) : super(key: key);
 
-  final List programsForYou = [
-    [
-      "LifeStyle",
-      "Understanding the behaviour of life",
-      "assets/book2.png",
-      12
-    ],
-    [
-      "LifeStyle",
-      "Understanding the behaviour of life",
-      "assets/book2.png",
-      12
-    ],
-    [
-      "LifeStyle",
-      "Understanding the behaviour of life",
-      "assets/book2.png",
-      12,
-    ],
-  ];
-  final List recentForYou = [
-    [
-      "LifeStyle",
-      "Understanding the behaviour of technology",
-      "assets/book3.png",
-      12
-    ],
-    [
-      "LifeStyle",
-      "Understanding the behaviour of technology",
-      "assets/book3.png",
-      12
-    ],
-    [
-      "LifeStyle",
-      "Understanding the behaviour of technology",
-      "assets/book3.png",
-      12,
-    ],
-  ];
-  final List tecForYou = [
-    ["LifeStyle", "Understanding the behaviour of tec", "assets/book1.png", 12],
-    ["LifeStyle", "Understanding the behaviour of tec", "assets/book1.png", 12],
-    [
-      "LifeStyle",
-      "Understanding the behaviour of tec",
-      "assets/book1.png",
-      12,
-    ],
-  ];
+  ListsOFProject listsOFProject = ListsOFProject();
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +30,7 @@ class UserLearningScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              ProgramEventsHeading(
+              const ProgramEventsHeading(
                 heading: 'Life-Style',
               ),
               Padding(
@@ -87,19 +39,19 @@ class UserLearningScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 8.0),
                   height: 310,
                   child: ListView.builder(
-                      itemCount: programsForYou.length,
+                      itemCount: listsOFProject.programsForYou.length,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
                         return JobCard(
-                          program: programsForYou[index][0],
-                          aboutProgram: programsForYou[index][1],
-                          image: programsForYou[index][2],
-                          lessons: programsForYou[index][3],
+                          program: listsOFProject.programsForYou[index][0],
+                          aboutProgram: listsOFProject.programsForYou[index][1],
+                          image: listsOFProject.programsForYou[index][2],
+                          lessons: listsOFProject.programsForYou[index][3],
                         );
                       }),
                 ),
               ),
-              ProgramEventsHeading(
+              const ProgramEventsHeading(
                 heading: 'Technology',
               ),
               Padding(
@@ -108,19 +60,19 @@ class UserLearningScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 8.0),
                   height: 310,
                   child: ListView.builder(
-                      itemCount: recentForYou.length,
+                      itemCount: listsOFProject.recentForYou.length,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
                         return JobCard(
-                          program: recentForYou[index][0],
-                          aboutProgram: recentForYou[index][1],
-                          image: recentForYou[index][2],
-                          lessons: recentForYou[index][3],
+                          program: listsOFProject.recentForYou[index][0],
+                          aboutProgram: listsOFProject.recentForYou[index][1],
+                          image: listsOFProject.recentForYou[index][2],
+                          lessons: listsOFProject.recentForYou[index][3],
                         );
                       }),
                 ),
               ),
-              ProgramEventsHeading(
+              const ProgramEventsHeading(
                 heading: 'Working-Style',
               ),
               Padding(
@@ -129,14 +81,14 @@ class UserLearningScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 8.0),
                   height: 310,
                   child: ListView.builder(
-                      itemCount: tecForYou.length,
+                      itemCount: listsOFProject.tecForYou.length,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
                         return JobCard(
-                          program: tecForYou[index][0],
-                          aboutProgram: tecForYou[index][1],
-                          image: tecForYou[index][2],
-                          lessons: tecForYou[index][3],
+                          program: listsOFProject.tecForYou[index][0],
+                          aboutProgram: listsOFProject.tecForYou[index][1],
+                          image: listsOFProject.tecForYou[index][2],
+                          lessons: listsOFProject.tecForYou[index][3],
                         );
                       }),
                 ),

@@ -1,3 +1,4 @@
+import 'package:assessmentsecond/list.dart';
 import 'package:assessmentsecond/utils/program_events_heading.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,62 +11,7 @@ import '../squarebox.dart/squarebox.dart';
 
 class UserHomeScreen extends StatelessWidget {
   UserHomeScreen({Key? key}) : super(key: key);
-  final List programsForYou = [
-    [
-      "LIFESTYLE",
-      "A complete guide for your new born baby",
-      "assets/image.jpg",
-      16
-    ],
-    [
-      "WORKING STYLE",
-      "Understanding the behaviour of bady",
-      "assets/image3.jpg",
-      12
-    ],
-    ["BABYCARE", "A complete guide for newly mother", "assets/image.jpg", 20],
-  ];
-
-  final List eventsForYou = [
-    [
-      "BABYCARE",
-      "Understanding of human behaviour",
-      "assets/image3.jpg",
-      "13 Feb, Sunday"
-    ],
-    [
-      "BABYCARE",
-      "Understanding of human behaviour",
-      "assets/image3.jpg",
-      "13 Feb, Sunday"
-    ],
-    [
-      "BABYCARE",
-      "Understanding of human behaviour",
-      "assets/image3.jpg",
-      "13 Feb, Sunday"
-    ],
-  ];
-  final List lessonForYou = [
-    [
-      "BABYCARE",
-      "Understanding of human behaviour",
-      "assets/image3.jpg",
-      "3 min"
-    ],
-    [
-      "BABYCARE",
-      "Understanding of human behaviour",
-      "assets/image3.jpg",
-      "1 min"
-    ],
-    [
-      "BABYCARE",
-      "Understanding of human behaviour",
-      "assets/image3.jpg",
-      "5 min"
-    ],
-  ];
+  ListsOFProject listsOFProject = ListsOFProject();
 
   @override
   Widget build(BuildContext context) {
@@ -229,14 +175,14 @@ class UserHomeScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8.0),
                   child: ListView.builder(
-                      itemCount: programsForYou.length,
+                      itemCount: listsOFProject.programsForYouHomeScreen.length,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
                         return JobCard(
-                          program: programsForYou[index][0],
-                          aboutProgram: programsForYou[index][1],
-                          image: programsForYou[index][2],
-                          lessons: programsForYou[index][3],
+                          program: listsOFProject.programsForYouHomeScreen[index][0],
+                          aboutProgram: listsOFProject.programsForYouHomeScreen[index][1],
+                          image:listsOFProject.programsForYouHomeScreen[index][2],
+                          lessons:listsOFProject.programsForYouHomeScreen[index][3],
                         );
                       }),
                 ),
@@ -252,14 +198,14 @@ class UserHomeScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8.0),
                   child: ListView.builder(
-                    itemCount: eventsForYou.length,
+                    itemCount: listsOFProject.eventsForYou.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return EventCard(
-                        program: eventsForYou[index][0],
-                        aboutProgram: eventsForYou[index][1],
-                        image: eventsForYou[index][2],
-                        date: eventsForYou[index][3],
+                        program: listsOFProject.eventsForYou[index][0],
+                        aboutProgram: listsOFProject.eventsForYou[index][1],
+                        image: listsOFProject.eventsForYou[index][2],
+                        date: listsOFProject.eventsForYou[index][3],
                       );
                     },
                   ),
@@ -276,14 +222,14 @@ class UserHomeScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8.0),
                   child: ListView.builder(
-                    itemCount: lessonForYou.length,
+                    itemCount:listsOFProject.lessonForYou.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return LessonCard(
-                        program: lessonForYou[index][0],
-                        aboutProgram: lessonForYou[index][1],
-                        image: lessonForYou[index][2],
-                        date: lessonForYou[index][3],
+                        program:listsOFProject.lessonForYou[index][0],
+                        aboutProgram:listsOFProject.lessonForYou[index][1],
+                        image: listsOFProject.lessonForYou[index][2],
+                        date: listsOFProject.lessonForYou[index][3],
                       );
                     },
                   ),

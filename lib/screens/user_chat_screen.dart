@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class UserChatScreen extends StatelessWidget {
-  UserChatScreen({Key? key}) : super(key: key);
-  TextEditingController controller = TextEditingController();
+  const UserChatScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +10,7 @@ class UserChatScreen extends StatelessWidget {
       body: SafeArea(
           child: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 100),
+          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 100),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -24,7 +22,7 @@ class UserChatScreen extends StatelessWidget {
                     fontSize: 30,
                     letterSpacing: 1),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(
@@ -35,12 +33,12 @@ class UserChatScreen extends StatelessWidget {
                   fontSize: 20,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               FloatingActionButton.extended(
                 onPressed: () {},
-                label: Text("Let's Talk"),
+                label: const Text("Let's Talk"),
               )
             ],
           ),

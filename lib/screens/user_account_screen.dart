@@ -1,3 +1,5 @@
+import 'package:assessmentsecond/list.dart';
+import 'package:assessmentsecond/utils/buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -7,35 +9,9 @@ import '../utils/program_events_heading.dart';
 
 class UserAccountScreen extends StatelessWidget {
   UserAccountScreen({Key? key}) : super(key: key);
+  ListsOFProject listsOFProject = ListsOFProject();
+  
 
-  final List programsForYou = [
-    [
-      "LifeStyle",
-      "Understanding the behaviour of life",
-      "assets/book2.png",
-      12
-    ],
-    [
-      "LifeStyle",
-      "Understanding the behaviour of life",
-      "assets/book2.png",
-      12
-    ],
-    [
-      "LifeStyle",
-      "Understanding the behaviour of life",
-      "assets/book2.png",
-      12,
-    ],
-  ];
-  final List order = [
-    'Product 1',
-    'Product 2',
-    'Product 3',
-    'Product 4',
-    'Product 5',
-    'Product 6',
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +47,7 @@ class UserAccountScreen extends StatelessWidget {
                         shape: BoxShape.circle,
                         color: Colors.grey.shade300,
                       ),
-                      child: CircleAvatar(
+                      child: const CircleAvatar(
                           backgroundImage: AssetImage("assets/image.jpg")),
                     ),
                     // following and followers
@@ -140,75 +116,15 @@ class UserAccountScreen extends StatelessWidget {
                   horizontal: 20.0,
                 ),
                 child: Row(
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(2.0),
-                        child: Container(
-                          padding: const EdgeInsets.all(
-                            5,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(
-                              5,
-                            ),
-                            border: Border.all(
-                              color: Colors.grey,
-                            ),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "Edit Profile",
-                            ),
-                          ),
-                        ),
-                      ),
+                  children: const [
+                    ButtonsForAccountScreen(
+                      text: "Edit Profile",
                     ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(2.0),
-                        child: Container(
-                          padding: const EdgeInsets.all(
-                            5,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(
-                              5,
-                            ),
-                            border: Border.all(
-                              color: Colors.grey,
-                            ),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "Ad Tools",
-                            ),
-                          ),
-                        ),
-                      ),
+                    ButtonsForAccountScreen(
+                      text: "Ad Tools",
                     ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(2.0),
-                        child: Container(
-                          padding: const EdgeInsets.all(
-                            5,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(
-                              5,
-                            ),
-                            border: Border.all(
-                              color: Colors.grey,
-                            ),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "Insights",
-                            ),
-                          ),
-                        ),
-                      ),
+                    ButtonsForAccountScreen(
+                      text: "Insights",
                     ),
                   ],
                 ),
@@ -221,11 +137,11 @@ class UserAccountScreen extends StatelessWidget {
                     vertical: 10.0,
                   ),
                   child: ListView.builder(
-                    itemCount: order.length,
+                    itemCount: listsOFProject.order.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (BuildContext context, int index) {
                       return BubbleStories(
-                        text: order[index],
+                        text: listsOFProject.order[index],
                       );
                     },
                   ),
@@ -240,14 +156,14 @@ class UserAccountScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 8.0),
                   height: 310,
                   child: ListView.builder(
-                      itemCount: programsForYou.length,
+                      itemCount: listsOFProject.programsForYou.length,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
                         return JobCard(
-                          program: programsForYou[index][0],
-                          aboutProgram: programsForYou[index][1],
-                          image: programsForYou[index][2],
-                          lessons: programsForYou[index][3],
+                          program: listsOFProject.programsForYou[index][0],
+                          aboutProgram:  listsOFProject.programsForYou[index][1],
+                          image:  listsOFProject.programsForYou[index][2],
+                          lessons:  listsOFProject.programsForYou[index][3],
                         );
                       }),
                 ),

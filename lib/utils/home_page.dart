@@ -21,8 +21,8 @@ int selectIndex = 0;
 final List<Widget> _children = [
   UserHomeScreen(),
   UserLearningScreen(),
-  UserHubScreen(),
-  UserChatScreen(),
+  const UserHubScreen(),
+  const UserChatScreen(),
   UserAccountScreen(),
 ];
 
